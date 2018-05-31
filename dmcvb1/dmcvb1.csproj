@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E71BF489-04B4-45DB-8FB1-006C56B49246}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dmcvb1</RootNamespace>
+    <AssemblyName>dmcvb1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analise.cs" />
+    <Compile Include="Classes\Errors.cs" />
+    <Compile Include="Classes\IOFile.cs" />
+    <Compile Include="Classes\Lexem.cs" />
+    <Compile Include="Classes\Text.cs" />
+    <Compile Include="HardStatement\BauerZamelson.cs" />
+    <Compile Include="HardStatement\HardAnalise.cs" />
+    <Compile Include="HardStatement\HardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HardStatement\HardForm.Designer.cs">
+      <DependentUpon>HardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HardStatement\HardForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HardStatement\HardForms.Designer.cs">
+      <DependentUpon>HardForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HardStatement\Stack.cs" />
+    <Compile Include="HardStatement\Statement.cs" />
+    <Compile Include="HardStatement\Traveller.cs" />
+    <Compile Include="HardStatement\TravellerTable.cs" />
+    <Compile Include="Lexic\FormForTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lexic\FormForTables.designer.cs">
+      <DependentUpon>FormForTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lexic\Lexic.cs" />
+    <Compile Include="Lexic\LexicAnalise.cs" />
+    <Compile Include="Lexic\Table.cs" />
+    <Compile Include="Syntax\Syntax.cs" />
+    <Compile Include="Syntax\SyntaxAssignment.cs" />
+    <Compile Include="Syntax\SyntaxDefinition.cs" />
+    <Compile Include="Syntax\SyntaxSelect.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="HardStatement\HardForm.resx">
+      <DependentUpon>HardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HardStatement\HardForms.resx">
+      <DependentUpon>HardForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lexic\FormForTables.resx">
+      <DependentUpon>FormForTables.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
